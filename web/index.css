@@ -37,10 +37,10 @@ button
 
 h6 {
     font-size: 1.8em;
-    text-align: center;
 }
 
 h3, h6, p {
     margin: 3vh;
+    text-align: center;
     color: white;
 }

@@ -9,19 +9,12 @@
 #include "password.hpp"
 #include "oled.hpp"
 #include "SC.hpp"
-#include "html.hpp"
-
-ESP8266WebServer server(80);
-Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
 void setup()
 {
-    const char *headerkeys[] = {"User-Agent", "Cookie"};
-    size_t headerkeyssize = sizeof(headerkeys) / sizeof(char *);
-
     Serial.begin(115200);
 
-    display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+    setOLED();
     printDisplay(true, 0, 0, "");
 
     WiFi.begin(ssid(), passw());
@@ -30,11 +23,7 @@ void setup()
     printDisplay(false, 0, 0, "Red: " + ssid());
     printDisplay(false, 0, 16, "IP: " + WiFi.localIP().toString());
 
-    server.on("/", Hroot);
-    server.on("/pwm", Hroot);
-    server.on("/login", Hlogin);
-    server.collectHeaders(headerkeys, headerkeyssize);
-    server.begin();
+    serverBegin();
     printDisplay(false, 0, 32, "Servidor iniciado");
     server.onNotFound(H404);
 }

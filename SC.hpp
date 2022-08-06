@@ -1,3 +1,7 @@
+#include "html.hpp"
+
+ESP8266WebServer server(80);
+
 bool loged()
 {
     printDisplay(true, 0, 0, "Revisando cookies...");
@@ -37,6 +41,7 @@ void Hlogin()
             server.sendHeader("Set-Cookie", "ESPsession=1;HttpOnly");
             server.send(301);
             printDisplay(false, 0, 32, "Autenticacion exitosa");
+            return;
         } 
     }
     server.send(200, "text/html", Hindexi());
@@ -55,4 +60,16 @@ void Hroot()
     }
     else
         server.send(200, "text/html", Hindex());
+}
+
+void serverBegin()
+{
+    const char *headerkeys[] = {"User-Agent", "Cookie"};
+    size_t headerkeyssize = sizeof(headerkeys) / sizeof(char *);
+
+    server.on("/", Hroot);
+    server.on("/pwm", Hroot);
+    server.on("/login", Hlogin);
+    server.collectHeaders(headerkeys, headerkeyssize);
+    server.begin();
 }

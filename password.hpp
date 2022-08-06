@@ -13,7 +13,7 @@ String root()
     return "root";
 }
 
-String password
+String password()
 {
     return "password";
 }

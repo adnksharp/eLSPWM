@@ -15,12 +15,12 @@ void setup()
     Serial.begin(115200);
 
     setOLED();
-    printDisplay(true, 0, 0, "");
+    printDisplay(true, 0, 0, "Iniciando...");
 
     WiFi.begin(ssid(), passw());
     while (WiFi.status() != WL_CONNECTED)
-        delay(500);
-    printDisplay(false, 0, 0, "Red: " + ssid());
+        delay(5000);
+    printDisplay(true, 0, 0, "Red: " + ssid());
     printDisplay(false, 0, 16, "IP: " + WiFi.localIP().toString());
 
     serverBegin();

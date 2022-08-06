@@ -42,8 +42,7 @@ void Hlogin()
             server.sendHeader("Set-Cookie", "ESPsession=1");
             server.send(301);
             printDisplay(false, 0, 32, "Autenticacion exitosa");
-            return;
-        } 
+        }
     }
     server.send(200, "text/html", Hindexi());
 }
@@ -61,6 +60,11 @@ void Hroot()
     }
     else
         server.send(200, "text/html", Hindex());
+    if (server.hasArg("out"))
+    {
+        printDisplay(false, 0, 32, "PWM: " + server.arg("out"));
+        analogWrite(2, server.arg("out").toInt());
+    }
 }
 
 void serverBegin()

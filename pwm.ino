@@ -25,7 +25,7 @@ void setup()
 
     serverBegin();
     printDisplay(false, 0, 32, "Servidor iniciado");
-    server.onNotFound(H404);
+    pinMode(2, OUTPUT);
 }
 
 void loop()

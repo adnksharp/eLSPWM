@@ -52,11 +52,11 @@ String CSS()
 String Hindex()
 {
     String html = "<!DOCTYPE html>\n";
-    html += "<html lang=\" es \">\n";
+    html += "<html lang=\"es\">\n";
 
     html += "<head>\n";
     html += "\t<meta charset=\" UTF - 8 \">\n";
-    html += "\t<meta name=\" viewport \" content=\" width = device - width, initial - scale = 1.0 \">\n";
+    html += "\t<meta name=\"viewport\" content=\"width = device-width, initial-scale = 1.0 \">\n";
     html += "\t<title>Control PWM</title>\n";
     html += "\t<style>\n";
 
@@ -68,9 +68,9 @@ String Hindex()
     html += "<body>\n";
     html += "\t<div>\n";
     html += "\t\t<h3>Control de salida PWM</h3>\n";
-    html += "\t\t<form action='/pwm'>\n";
-    html += "\t\t\t<input type=\" range \" name=\" out \" min=\" 0 \" max=\" 255 \" value=\" 50 \">\n";
-    html += "\t\t\t<button type=\" submit \">Cambiar PWM</button>\n";
+    html += "\t\t<form action=\"/pwm\">\n";
+    html += "\t\t\t<input type=\"range\" name=\"out\" min=\"0\" max=\"255\" value=\"50\">\n";
+    html += "\t\t\t<button type=\"submit\">Cambiar PWM</button>\n";
     html += "\t</div>\n";
     html += "</body>\n";
 
@@ -81,11 +81,11 @@ String Hindex()
 String Hindexi()
 {
     String html = "<!DOCTYPE html>\n";
-    html += "<html lang=\" es \">\n";
+    html += "<html lang=\"es\">\n";
 
     html += "<head>\n";
-    html += "\t<meta charset=\" UTF - 8 \">\n";
-    html += "\t<meta name=\" viewport \" content=\" width = device - width, initial - scale = 1.0 \">\n";
+    html += "\t<meta charset=\"UTF-8\">\n";
+    html += "\t<meta name=\"viewport\" content=\"width = device-width, initial-scale = 1.0 \">\n";
     html += "\t<title>Login</title>\n";
     html += "\t<style>\n";
 
@@ -96,10 +96,10 @@ String Hindexi()
 
     html += "<body>\n";
     html += "\t<div>\n";
-    html += "\t\t<form action='/login' method='post'>\n";
-    html += "\t\t\t<input type=\" text \" name=\" User \" placeholder=\" Usuario \">\n";
-    html += "\t\t\t<input type=\" password \" name=\" Passwd \" placeholder=\" Contraseña \">\n";
-    html += "\t\t\t<button type=\" submit \">Iniciar Sesión</button>\n";
+    html += "\t\t<form action=\"/login\" method=\"post\">\n";
+    html += "\t\t\t<input type=\"text\" name=\"User\" placeholder=\"Usuario\">\n";
+    html += "\t\t\t<input type=\"password\" name=\"Passwd\" placeholder=\"Contraseña\">\n";
+    html += "\t\t\t<button type=\"submit\">Iniciar Sesion</button>\n";
     html += "\t\t</form>\n";
     html += "\t</div>\n";
     html += "</body>\n";
@@ -111,11 +111,11 @@ String Hindexi()
 String Hindex0()
 {
     String html = "<!DOCTYPE html>\n";
-    html += "<html lang=\" es \">\n";
+    html += "<html lang=\"es\">\n";
 
     html += "<head>\n";
-    html += "\t<meta charset=\" UTF - 8 \">\n";
-    html += "\t<meta name=\" viewport \" content=\" width = device - width, initial - scale = 1.0 \">\n";
+    html += "\t<meta charset=\"UTF-8\">\n";
+    html += "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale = 1.0\">\n";
     html += "\t<title>Error 404</title>\n";
     html += "\t<style>\n";
 

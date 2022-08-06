@@ -21,7 +21,7 @@ bool loged()
 void H404()
 {
     printDisplay(true, 0, 0, "Pagina no encontrada");
-    server.send(404, "text/plain", Hindex0());
+    server.send(404, "text/html", Hindex0());
 }
 
 void Hlogin()
@@ -34,11 +34,12 @@ void Hlogin()
     }
     if (server.hasArg("User") && server.hasArg("Passwd"))
     {
+        printDisplay(false, 0, 16, "Usuario: " + server.arg("User"));
         if (server.arg("User") == root() && server.arg("Passwd") == password())
         {
             server.sendHeader("Location", "/");
             server.sendHeader("Cache-Control", "no-cache");
-            server.sendHeader("Set-Cookie", "ESPsession=1;HttpOnly");
+            server.sendHeader("Set-Cookie", "ESPsession=1");
             server.send(301);
             printDisplay(false, 0, 32, "Autenticacion exitosa");
             return;
@@ -70,6 +71,7 @@ void serverBegin()
     server.on("/", Hroot);
     server.on("/pwm", Hroot);
     server.on("/login", Hlogin);
+    server.onNotFound(H404);
     server.collectHeaders(headerkeys, headerkeyssize);
     server.begin();
 }

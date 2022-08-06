@@ -5,7 +5,7 @@
 Controlar salidas PWM de una placa ESP8266 con un servidor web local.
 
 ## Arduino
-Contine las librerias a usar de Arduino a usar:
+Contine las librerias de Arduino a usar:
 - Wire.h
 - Adafruit_GFX.h
 - Adafruit_SSD1306.h

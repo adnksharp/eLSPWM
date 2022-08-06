@@ -15,8 +15,15 @@ Adafruit_SSD1306 display(128, 64, &Wire, -1);
 void setup()
 {
     Serial.begin(115200);
+
     display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
     printDisplay(true, 0, 0, "");
+
+    WiFi.begin(ssid(), passw());
+    while (WiFi.status() != WL_CONNECTED)
+        delay(500);
+    printDisplay(false, 0, 0, "Red: " + ssid());
+    printDisplay(false, 0, 16, "IP: " + WiFi.localIP().toString());
 }
 
 void loop()
